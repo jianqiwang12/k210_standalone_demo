@@ -5,7 +5,7 @@
 
 int main(void)
 {
-    fpioa_set_function(12, FUNC_GPIO3);
+    fpioa_set_function(13, FUNC_GPIO3);
 
     gpio_init();
     gpio_set_drive_mode(3, GPIO_DM_OUTPUT);
