@@ -9,15 +9,11 @@
 
 int main(void)
 {
-<<<<<<< HEAD:k210_standalone-sdk_led/src/main.c
     // FPIOA允许用户将255个内部功能映射到芯片外围的48个自由IO上
     // 设置管脚复用功能
     // MaixDock上IO12是LED_B, IO13是LED_G, IO14是LED_R
     // 将GPIO Pin 3映射到IO12的管脚上
     fpioa_set_function(12, FUNC_GPIO1);
-=======
-    fpioa_set_function(13, FUNC_GPIO3);
->>>>>>> aab52988ff67a26c87c2148e27c95d4d9c45f24d:led_blink/src/main.c
 
     // 初始化GPIO
     gpio_init();
