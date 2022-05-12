@@ -57,7 +57,7 @@
 
   ![build](./img/build.jpg)
 
-- 编译通过后再点击坐下角的`->`下载至开发板上。
+- 编译通过后再点击左下角的`->`下载至开发板上。
 
   ![download](./img/download.jpg)
 
