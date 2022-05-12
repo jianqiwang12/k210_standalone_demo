@@ -1,4 +1,4 @@
-# k210_standalone-sdk_demo
+# k210_standalone_demo
 
 ## 在VSCode中使用PlatformIO插件进行k210的裸机开发
 
