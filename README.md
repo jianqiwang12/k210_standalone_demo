@@ -14,7 +14,7 @@
 
   ![install success](./img/install_success.jpg)
 
-- 点击这个小房子可以看到platformio的主页，点击`New Project`创建新项目。
+- 点击这个小房子可以看到PlatformIO的主页，点击`New Project`创建新项目。
 
   ![new project](./img/new_project.jpg)
 
