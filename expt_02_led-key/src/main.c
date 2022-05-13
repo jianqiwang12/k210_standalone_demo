@@ -16,9 +16,9 @@
 #define GPIO_KEY 2
 
 uint32_t irq_flag;
-uint32_t g_count;
+uint32_t g_count = 4;
 
-int irq_gpiohs2(void* ctx)
+int irq_gpiohs2(void *ctx)
 {
     // 获取按键状态
     // 0为按下, 1为断开
@@ -30,10 +30,13 @@ int irq_gpiohs2(void* ctx)
         printf("LED ON\n");
     }
 
-    if (!irq_flag)
+    if(!irq_flag){
         gpiohs_set_pin(GPIO_LED, GPIO_PV_LOW);
-    else
+    }
+    else{
         gpiohs_set_pin(GPIO_LED, GPIO_PV_HIGH);
+    }
+
     return 0;
 }
 
@@ -52,9 +55,13 @@ int main(void)
 
     fpioa_set_function(PIN_KEY, FUNC_GPIOHS2);
     gpiohs_set_drive_mode(GPIO_KEY, GPIO_DM_INPUT_PULL_UP);
+
+    // 设置高速GPIO中断触发方式
+    // GPIO_PE_BOTH 双延触发
     gpiohs_set_pin_edge(GPIO_KEY, GPIO_PE_BOTH);
 
-    gpiohs_irq_register(GPIO_KEY, 1, irq_gpiohs2, &g_count);
+    // 设置高速GPIO的中断回调函数
+    gpiohs_irq_register(GPIO_KEY, 1, irq_gpiohs2, NULL);
 
     while (1);
 }
